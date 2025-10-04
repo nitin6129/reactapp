@@ -1,2 +1,4 @@
+##dockercms to build and run
+
 docker build -t ecs-node-app .
 docker run -p 3000:3000 ecs-node-app
