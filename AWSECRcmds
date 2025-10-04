@@ -1,0 +1,10 @@
+Step 1: Create ECR Repository
+aws ecr create-repository --repository-name ecs-node-app
+
+Step 2: Authenticate Docker with ECR
+aws ecr get-login-password --region <your-region> | docker login --username AWS --password-stdin <aws-account-id>.dkr.ecr.<your-region>.amazonaws.com
+
+Step 3: Tag & Push Image
+docker tag ecs-node-app:latest <aws-account-id>.dkr.ecr.<your-region>.amazonaws.com/ecs-node-app:latest
+docker push <aws-account-id>.dkr.ecr.<your-region>.amazonaws.com/ecs-node-app:latest
+
